@@ -203,9 +203,13 @@ server.post('/create-payment-intent', async (req, res) => {
 main().catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect(process.env.MONGODB_URL);
+  await mongoose.connect(process.env.MONGODB_URL)
   console.log('database connected');
 }
+
+// server.listen(process.env.PORT, () => {
+//   console.log('server started');
+// });
 
 server.listen(process.env.PORT, () => {
   console.log('server started');
